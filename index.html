@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第3回海外オンライン交流企画 | The 3rd International Online Exchange Program - CodeNames</title>
+    <style>
+        /* 全体の設定 */
+        body {
+            /* 投影用に視認性の高いゴシック体を優先 */
+            font-family: 'Meiryo', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+            line-height: 1.8;
+            color: #222222;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: 600;
+            word-break: keep-all;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* コンテンツ全体のコンテナ */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 60px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ヘッダー */
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #005A8C;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #003B5C;
+            font-size: 2.2em;
+            margin: 0;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 15px;
+            font-weight: 700;
+        }
+
+        /* 本文・見出し */
+        p {
+            font-size: 1.1em;
+            margin-bottom: 1.5em;
+            color: #333;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            font-weight: 800;
+            color: #003B5C;
+            border-left: 8px solid #E63946;
+            /* CodeNamesの赤を意識 */
+            padding-left: 20px;
+            margin-top: 60px;
+            background: linear-gradient(90deg, rgba(230, 57, 70, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 800;
+            color: #005A8C;
+            /* CodeNamesの青を意識 */
+            margin-top: 40px;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+        }
+
+        /* タイムテーブル・表 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+            font-size: 1em;
+            background-color: #fff;
+        }
+
+        th,
+        td {
+            border: 1px solid #dcdcdc;
+            padding: 18px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: 800;
+            color: #222;
+            text-align: center;
+        }
+
+        td.time {
+            font-weight: 700;
+            color: #005A8C;
+            width: 15%;
+            text-align: center;
+            font-size: 1.1em;
+            vertical-align: middle;
+        }
+
+        .purpose {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #eee;
+        }
+
+        /* ゲームフローのレイアウト(縦方向) */
+        .flow-chart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .flow-step {
+            width: 90%;
+            max-width: 800px;
+            margin: 15px 0;
+            text-align: left;
+            padding: 25px 35px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+        }
+
+        .flow-icon {
+            font-size: 3.5em;
+            color: #005A8C;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .flow-content {
+            flex-grow: 1;
+        }
+
+        .flow-content p.step-title {
+            font-size: 1.25em;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+            color: #222;
+        }
+
+        .flow-content p.step-desc {
+            margin: 0;
+            font-size: 1em;
+            color: #444;
+            font-weight: 600;
+        }
+
+        .flow-arrow {
+            font-size: 2em;
+            color: #ccc;
+            margin: 5px 0;
+        }
+
+        /* スクリーンショット画像用のスペース */
+        .screenshot-img {
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            min-height: 200px;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9em;
+            color: #888;
+            line-height: 200px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* ルールハイライト・役割ボックス */
+        .role-box-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .role-box {
+            flex: 1;
+            padding: 25px;
+            border-radius: 10px;
+            border-top: 5px solid;
+            background-color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .role-spymaster {
+            border-color: #005A8C;
+        }
+
+        .role-operative {
+            border-color: #E63946;
+        }
+
+        .role-box h4 {
+            margin-top: 0;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .rule-section {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+            padding: 25px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background-color: #fff9f9;
+            /* 暗殺者警告用 */
+            border-left: 6px solid #333;
+        }
+
+        .rule-icon {
+            font-size: 3.5em;
+            margin-right: 25px;
+        }
+
+        .rule-description {
+            font-size: 1.05em;
+            font-weight: 600;
+        }
+
+        .highlight {
+            background-color: #fff0f0;
+            color: #d32f2f;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: 800;
+        }
+
+        .highlight-blue {
+            background-color: #e3f2fd;
+            color: #1976d2;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: 800;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 1em;
+            font-size: 1.05em;
+        }
+
+        /* チームテーブル (削除済みですが、クラス指定は残しておいても影響ありません) */
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 25px;
+        }
+
+        .team-box {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .team-red th {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        .team-blue th {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #ddd;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #555;
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px auto;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .role-box-container {
+                flex-direction: column;
+            }
+
+            .flow-step {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            th,
+            td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+        }
+
+        /* PDF出力用のスタイル */
+        @media print {
+            body {
+                background-color: #fff;
+                font-size: 10pt;
+            }
+
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+                max-width: 100%;
+                border: none;
+            }
+
+            h2 {
+                page-break-before: always;
+                padding-top: 20px;
+            }
+
+            .container>h2:first-of-type {
+                page-break-before: auto;
+            }
+
+            .flow-step,
+            .rule-section,
+            table,
+            .role-box {
+                page-break-inside: avoid;
+            }
+
+            .flow-arrow {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>第3回海外オンライン交流企画 CodeNames</h1>
+            <p>The 3rd International Online Exchange Program <br>Board Game: CodeNames</p>
+        </div>
+
+        <p>この度は、第3回の海外オンライン交流企画にご参加いただき、誠にありがとうございます！</p>
+        <p>前回は「Gartic
+            Phone」でお絵描きを通じた交流を行いましたが、今回は<strong>「よりメンバー同士の会話の量を増やすこと」</strong>を目的として、世界中で大人気の言葉の連想ボードゲーム<strong>「CodeNames（コードネーム）」</strong>をプレイします！
+        </p>
+        <p>実施時間は前回と同じく90分間となります。チーム内でたくさん話し合い、コミュニケーションを深めましょう。</p>
+        <p>英語での連想ゲームは少し難しく感じるかもしれませんが、言葉の壁を気にせず、チーム一丸となって協力しながら楽しみましょう！</p>
+
+        <hr style="border: 0; border-top: 1px dashed #ccc; margin: 30px 0;">
+
+        <p>Thank you very much for joining our 3rd International Online Exchange Program!</p>
+        <p>Last time, we enjoyed creative interaction through "Gartic Phone." This time, with the goal of
+            <strong>"increasing the amount of conversation among members,"</strong> we will be playing the globally
+            popular word association board game, <strong>"CodeNames"</strong>!</p>
+        <p>The event time will be 90 minutes, the same as last time. Let's discuss a lot within our teams and deepen our
+            communication.</p>
+        <p>Playing a word association game in English might seem a bit challenging, but let's not worry about the
+            language barrier, cooperate as one team, and most importantly, have fun!</p>
+
+        <h2>タイムテーブル / Timetable (90min)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>時間 (Time)</th>
+                    <th>内容 (Content)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="time">10 min</td>
+                    <td>
+                        <strong>オープニング & ルール説明 / Opening & Rule Explanation</strong>
+                        <div class="purpose">
+                            ○ 簡単な挨拶と趣旨の説明 / Brief greetings and explanation of the event<br>
+                            ○ CodeNamesのコンセプトとルール説明 / Explanation of CodeNames concept and rules<br>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center; font-weight: 700; background-color: #f8f9fa;">
+                        --- チーム分け（3〜4名のチームを4つ作成） --- / --- Make 4 teams of 3-4 people ---
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">15 min</td>
+                    <td>
+                        <strong>チーム内に分かれてアイスブレイク & 役割決め / Breakout Rooms: Icebreaker & Role Assignment</strong>
+                        <div class="purpose">
+                            目的 : アイスブレイクと役割決め / Purpose: Icebreaker & Role assignment<br>
+                            ○ 英語で自己紹介 / Self-introduction in English<br>
+                            　･普段の業務 / My role<br>
+                            　･趣味 / My hobbies/interests<br>
+                            　･最近楽しかったこと / My recent happy memories<br>
+                            ○ スパイマスターの決定 / Decide Spymasters
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center; font-weight: 700; background-color: #f8f9fa;">
+                        --- 再集合 --- / --- Regroup ---
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">25 min</td>
+                    <td>
+                        <strong>1ゲーム目スタート / Start Game 1</strong>
+                        <div class="purpose">
+                            チームで相談しながら勝利を目指す！ / Discuss with your team and aim for victory!
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center; font-weight: 700; background-color: #f8f9fa;">
+                        --- 再集合 --- / --- Regroup ---
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">25 min</td>
+                    <td>
+                        <strong>2ゲーム目スタート / Start Game 2</strong>
+                        <div class="purpose">
+                            スパイマスターを交代して進行します。 / Rotate the Spymaster for the next game.
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center; font-weight: 700; background-color: #f8f9fa;">
+                        --- 再集合 & クロージング --- / --- Regroup & Closing ---
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">10 min</td>
+                    <td>
+                        <strong>締め / Closing</strong>
+                        <div class="purpose">
+                            ○ 全体の振り返り / Wrap-up<br>
+                            ○ アンケート協力のお願い / Request for survey cooperation
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>CodeNames ルール説明 / How to Play CodeNames</h2>
+        <p>「CodeNames」は、盤面に並べられた25枚の単語カードの中から、ヒントを頼りに<strong>「自分のチームの色のカード」を全て見つけ出す</strong>2チーム対抗の連想ゲームです。</p>
+        <p>"CodeNames" is a word association game where two teams compete to find all of their <strong>"team-colored
+                cards"</strong> from 25 word cards on the board, based on hints.</p>
+
+        <h3>役割分担 / Roles</h3>
+        <div class="role-box-container">
+            <div class="role-box role-spymaster">
+                <h4 style="color: #005A8C;">🕵️‍♂️ スパイマスター / Spymaster</h4>
+                <p>各チームの代表者です。どのカードが自チームの色か（答え）を知っています。<br>
+                    味方に当ててもらうために、<strong>「単語1つ」と「枚数」</strong>のヒントを出します。</p>
+                <p style="font-size: 0.9em; color: #666;">The representative of each team. Knows which cards belong to
+                    their team (the answers). Gives a hint consisting of <strong>"One word" and "Number"</strong> for
+                    their teammates to guess.</p>
+            </div>
+            <div class="role-box role-operative">
+                <h4 style="color: #E63946;">👥 現場諜報員 / Operative</h4>
+                <p>スパイマスター以外のメンバーです。答えは知りません。<br>
+                    出されたヒントから連想されるカードを<strong>チームで相談して選び</strong>、タッチします。</p>
+                <p style="font-size: 0.9em; color: #666;">The rest of the team members. They do not know the answers.
+                    They <strong>discuss as a team and select</strong> the cards associated with the given hint.</p>
+            </div>
+        </div>
+
+        <h3>ゲームの流れ / Game Flow</h3>
+
+        <div class="flow-chart">
+            <div class="flow-step">
+                <div class="flow-icon">💡</div>
+                <div class="flow-content">
+                    <p class="step-title">Step 1: スパイマスターがヒントを出す (Spymaster gives a hint)</p>
+                    <p class="step-desc">
+                        自チームのカードに関連する<strong>「単語1つ」</strong>と、それに該当する<strong>「枚数」</strong>を宣言します。<br>
+                        <span class="highlight-blue">例(Example): "Animal, 2" (動物、2枚)</span>
+                    </p>
+                    <div class="screenshot-img"></div>
+                </div>
+            </div>
+
+            <div class="flow-arrow">⬇️</div>
+
+            <div class="flow-step">
+                <div class="flow-icon">🗣️</div>
+                <div class="flow-content">
+                    <p class="step-title">Step 2: オペレーティブが相談する (Operatives discuss)</p>
+                    <p class="step-desc">
+                        ヒントをもとに、どのカードが正解かチーム内で話し合います。<br>
+                        Based on the hint, discuss within the team which cards are correct.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flow-arrow">⬇️</div>
+
+            <div class="flow-step">
+                <div class="flow-icon">👆</div>
+                <div class="flow-content">
+                    <p class="step-title">Step 3: カードを選択・判定 (Select a card & Result)</p>
+                    <p class="step-desc">決まったらカードをクリックします。そのカードの正体によって結果が変わります。<br>Click the card once decided. The
+                        result depends on the card's true identity.</p>
+                    <ul style="margin-top: 10px; margin-bottom: 0;">
+                        <li><strong>自チーム (Own team):</strong> 正解！続けて推測できます。 (Correct! Continue guessing.)</li>
+                        <li><strong>一般人 (Innocent):</strong> ハズレ。ターンが終了します。 (Miss. Turn ends.)</li>
+                        <li><strong>相手チーム (Opponent):</strong> 相手の得点になり、ターン終了。 (Opponent scores, turn ends.)</li>
+                    </ul>
+                    <div class="screenshot-img"></div>
+                </div>
+            </div>
+
+            <div class="flow-arrow">⬇️</div>
+
+            <div class="flow-step">
+                <div class="flow-icon">🔁</div>
+                <div class="flow-content">
+                    <p class="step-title">Step 4: ターン交代 (Turn change)</p>
+                    <p class="step-desc">
+                        推測を間違えるか、指定された枚数分を当て終えて推測をパスした場合、相手チームのターンに移ります。これを繰り返し、先に自チームのカードを全て見つけたチームの勝利です！<br>
+                        If you guess wrong or pass, it becomes the opponent's turn. The first team to find all their
+                        cards wins!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <div class="rule-icon">💀</div>
+            <div>
+                <strong style="font-size: 1.2em; color: #d32f2f;">要注意：暗殺者 (Assassin) について</strong><br>
+                <div class="rule-description">
+                    25枚の中には1枚だけ、絶対に選んではいけない<strong>黒いカード「暗殺者」</strong>が潜んでいます。<br>
+                    オペレーティブがこのカードを選んでしまった瞬間、<strong>そのチームは即座に敗北</strong>となります！<br>
+                    スパイマスターは、暗殺者を連想させるようなヒントは絶対に出さないように注意しましょう。<br>
+                    <span style="font-size: 0.9em; color: #666; display: block; margin-top: 5px;">
+                        There is one black card, the <strong>"Assassin"</strong>. If an operative selects this card,
+                        <strong>the team loses instantly!</strong> Spymasters must be very careful not to give hints
+                        that might lead to the Assassin.
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <h2>コミュニケーションのヒント & 注意事項 / Tips & Troubleshooting</h2>
+        <ul>
+            <li><strong>複数枚を繋げるヒントを考えよう！ / Try to link multiple cards with one hint!</strong>
+                <br>1枚ずつ当てるのも確実ですが、2枚、3枚と繋がるヒント（例："Space, 3"）を出せるとゲームが有利に進みます。
+                <br>Linking 2 or 3 cards with one hint (e.g., "Space, 3") gives your team a big advantage.
+            </li>
+            <li><strong>ヒントの制限 / Hint Restrictions</strong>
+                <br>ヒントは「意味を持つ単語」である必要があります。盤面にある単語そのものや、その翻訳語をヒントにすることはできません。
+                <br>Hints must be meaningful words. You cannot use words that are currently visible on the board or
+                their direct translations.
+            </li>
+            <li><strong>たくさん発言して推測を共有しよう！ / Share your thoughts!</strong>
+                <br>オペレーティブは「なぜそのカードだと思ったか」を声に出して相談しましょう。間違っていてもOK！話し合いの過程が一番盛り上がります。
+                <br>Operatives, voice out why you think a card is the answer. It's OK to be wrong! The discussion
+                process is the most fun part.
+            </li>
+            <li><strong>⚠️トラブル時の対応 / Troubleshooting</strong>
+                <br>通信環境により、一時的に画面から退出（回線落ち）してしまう場合があります。
+                <br>その際は、<span class="highlight">慌てずにオンライン会議ツールのチャットでチームメンバーに報告</span>してください。ゲームを一時停止し、再接続を待ちます。
+                <br>If you get disconnected due to network issues, <span class="highlight">please inform your team via
+                    the meeting chat</span>. We will pause the game and wait for you to reconnect.
+            </li>
+        </ul>
+
+        <div class="footer">
+            <p>それでは、戦略とコミュニケーションが鍵を握るCodeNamesの世界を一緒に楽しみましょう！<br>Let's have a great time together in the world of
+                CodeNames, where strategy and communication are key!</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
