@@ -198,6 +198,16 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
+        /* 中央揃え画像 */
+        .img-center {
+            display: block;
+            margin: 25px auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
         /* ルールハイライト・役割ボックス */
         .role-box-container {
             display: flex;
@@ -395,7 +405,8 @@
         <p>Thank you very much for joining our 3rd International Online Exchange Program!</p>
         <p>Last time, we enjoyed creative interaction through "Gartic Phone." This time, with the goal of
             <strong>"increasing the amount of conversation among members,"</strong> we will be playing the globally
-            popular word association board game, <strong>"CodeNames"</strong>!</p>
+            popular word association board game, <strong>"CodeNames"</strong>!
+        </p>
         <p>The event time will be 90 minutes, the same as last time. Let's discuss a lot within our teams and deepen our
             communication.</p>
         <p>Playing a word association game in English might seem a bit challenging, but let's not worry about the
@@ -486,41 +497,71 @@
         </table>
 
         <h2>CodeNames ルール説明 / How to Play CodeNames</h2>
-        <p>「CodeNames」は、盤面に並べられた25枚の単語カードの中から、ヒントを頼りに<strong>「自分のチームの色のカード」を全て見つけ出す</strong>2チーム対抗の連想ゲームです。</p>
-        <p>"CodeNames" is a word association game where two teams compete to find all of their <strong>"team-colored
-                cards"</strong> from 25 word cards on the board, based on hints.</p>
 
-        <h3>役割分担 / Roles</h3>
+        <p>ボードゲームインストラクターとして、10年間数千人の方に伝えてきた「一番スムーズに頭に入る」構成で説明しますね。</p>
+        <p style="font-size: 0.9em; color: #666;">As a board game instructor, I'll explain this using the structure that
+            I've found works best after teaching thousands of people over 10 years.</p>
+
+        <p>『コードネーム』は、2つのチーム（赤と青）に分かれて、<strong>「場に散らばった仲間のエージェント（正解の言葉）を、暗号を頼りにすべて見つけ出す」</strong>対戦型のチーム戦ゲームです。</p>
+        <p style="font-size: 0.9em; color: #666;">"Codenames" is a competitive team game where two teams (Red and Blue)
+            race to <strong>"find all of their agents (correct words) scattered on the board, using only coded
+                hints."</strong></p>
+
+        <!-- 1. 役割分担と準備 -->
+        <h3>1. 役割分担と準備 / Roles & Setup</h3>
+        <p>まず、各チームで2つの役割を決めます。</p>
+        <p style="font-size: 0.9em; color: #666;">First, each team assigns two types of roles.</p>
+
         <div class="role-box-container">
             <div class="role-box role-spymaster">
-                <h4 style="color: #005A8C;">🕵️‍♂️ スパイマスター / Spymaster</h4>
-                <p>各チームの代表者です。どのカードが自チームの色か（答え）を知っています。<br>
-                    味方に当ててもらうために、<strong>「単語1つ」と「枚数」</strong>のヒントを出します。</p>
-                <p style="font-size: 0.9em; color: #666;">The representative of each team. Knows which cards belong to
-                    their team (the answers). Gives a hint consisting of <strong>"One word" and "Number"</strong> for
-                    their teammates to guess.</p>
+                <h4 style="color: #005A8C;">🕵️‍♂️ スパイマスター（1名） / Spymaster (1 person)</h4>
+                <p>正解を知っている「指示役」。</p>
+                <p style="font-size: 0.9em; color: #666;">The "hint giver" who knows the answers.</p>
             </div>
             <div class="role-box role-operative">
-                <h4 style="color: #E63946;">👥 現場諜報員 / Operative</h4>
-                <p>スパイマスター以外のメンバーです。答えは知りません。<br>
-                    出されたヒントから連想されるカードを<strong>チームで相談して選び</strong>、タッチします。</p>
-                <p style="font-size: 0.9em; color: #666;">The rest of the team members. They do not know the answers.
-                    They <strong>discuss as a team and select</strong> the cards associated with the given hint.</p>
+                <h4 style="color: #E63946;">👥 現場諜報員（その他全員） / Field Operatives (everyone else)</h4>
+                <p>ヒントを元に言葉を当てる「回答役」。</p>
+                <p style="font-size: 0.9em; color: #666;">The "guessers" who try to identify the correct words based on
+                    the hints.</p>
             </div>
         </div>
 
-        <h3>ゲームの流れ / Game Flow</h3>
+        <img src="Roles & Setup.png" alt="役割分担 / Roles & Setup" class="img-center" style="max-width: 900px;">
+
+        <p>机には<strong>25枚のワードカード</strong>が5×5で並んでいます。<br>
+            スパイマスターだけが、「どのカードが自分のチームの正解か」が書かれた<strong>「正解地図（キーカード）」</strong>を見ることができます。</p>
+        <p style="font-size: 0.9em; color: #666;">On the table, <strong>25 word cards</strong> are arranged in a 5×5
+            grid.<br>
+            Only the Spymaster can see the <strong>"Key Card" (answer map)</strong>, which shows which cards belong to
+            each team.</p>
+
+        <img src="25 word cards.png" alt="25枚のワードカード / 25 Word Cards" class="img-center" style="max-width: 900px;">
+
+        <!-- 2. ゲームの流れ -->
+        <h3>2. ゲームの流れ（手番でやること） / Game Flow (What to Do on Your Turn)</h3>
+        <p>赤チーム・青チームが交互に手番を行います。</p>
+        <p style="font-size: 0.9em; color: #666;">Red and Blue teams take turns alternately.</p>
 
         <div class="flow-chart">
             <div class="flow-step">
                 <div class="flow-icon">💡</div>
                 <div class="flow-content">
-                    <p class="step-title">Step 1: スパイマスターがヒントを出す (Spymaster gives a hint)</p>
+                    <p class="step-title">① スパイマスターが「ヒント」を出す / The Spymaster Gives a Hint</p>
                     <p class="step-desc">
-                        自チームのカードに関連する<strong>「単語1つ」</strong>と、それに該当する<strong>「枚数」</strong>を宣言します。<br>
-                        <span class="highlight-blue">例(Example): "Animal, 2" (動物、2枚)</span>
+                        スパイマスターは、自分のチームの正解カードを複数枚、<strong>たった一言</strong>で表現します。<br>
+                        言い方は必ず<strong>「単語1つ ＋ 数字1つ」</strong>です。
                     </p>
-                    <div class="screenshot-img"></div>
+                    <p class="step-desc" style="font-size: 0.9em; color: #666;">
+                        The Spymaster tries to describe multiple correct cards with <strong>just one word</strong>.<br>
+                        The format is always <strong>"One word + One number."</strong>
+                    </p>
+                    <p class="step-desc" style="margin-top: 10px;">
+                        <span class="highlight-blue">例：正解が「りんご」と「バナナ」の場合 → スパイマスター：「フルーツ、2枚」</span><br>
+                        <span class="highlight-blue" style="font-size: 0.9em;">Example: If the answers are "Apple" and
+                            "Banana" → Spymaster: "Fruit, 2"</span>
+                    </p>
+                    <img src="Spymaster Gives a Hint.png" alt="スパイマスターがヒントを出す / Spymaster Gives a Hint"
+                        class="img-center" style="max-width: 750px;">
                 </div>
             </div>
 
@@ -529,62 +570,105 @@
             <div class="flow-step">
                 <div class="flow-icon">🗣️</div>
                 <div class="flow-content">
-                    <p class="step-title">Step 2: オペレーティブが相談する (Operatives discuss)</p>
+                    <p class="step-title">② 現場諜報員が「推理」する / Field Operatives Guess</p>
                     <p class="step-desc">
-                        ヒントをもとに、どのカードが正解かチーム内で話し合います。<br>
-                        Based on the hint, discuss within the team which cards are correct.
+                        チームメンバーは相談して、正解だと思うカードを1枚ずつ触ります。
                     </p>
-                </div>
-            </div>
-
-            <div class="flow-arrow">⬇️</div>
-
-            <div class="flow-step">
-                <div class="flow-icon">👆</div>
-                <div class="flow-content">
-                    <p class="step-title">Step 3: カードを選択・判定 (Select a card & Result)</p>
-                    <p class="step-desc">決まったらカードをクリックします。そのカードの正体によって結果が変わります。<br>Click the card once decided. The
-                        result depends on the card's true identity.</p>
+                    <p class="step-desc" style="font-size: 0.9em; color: #666;">
+                        Team members discuss and touch the cards they believe are correct, one at a time.
+                    </p>
                     <ul style="margin-top: 10px; margin-bottom: 0;">
-                        <li><strong>自チーム (Own team):</strong> 正解！続けて推測できます。 (Correct! Continue guessing.)</li>
-                        <li><strong>一般人 (Innocent):</strong> ハズレ。ターンが終了します。 (Miss. Turn ends.)</li>
-                        <li><strong>相手チーム (Opponent):</strong> 相手の得点になり、ターン終了。 (Opponent scores, turn ends.)</li>
+                        <li><strong>自分のチームの色が出た！</strong>：正解です！続けて次のカードを推理できます。<br>
+                            <span style="font-size: 0.9em; color: #666;"><strong>Your team's color revealed!</strong>
+                                Correct! You can continue guessing the next card.</span>
+                        </li>
+                        <li><strong>一般人（白）が出た。</strong>：ハズレです。その時点で<strong>即、交代</strong>となります。<br>
+                            <span style="font-size: 0.9em; color: #666;"><strong>Innocent bystander (white)
+                                    revealed.</strong> Wrong! Your turn ends <strong>immediately</strong>.</span>
+                        </li>
+                        <li><strong>相手チームの色が出た！</strong>：相手に点数を献上してしまい、<strong>即、交代</strong>となります。<br>
+                            <span style="font-size: 0.9em; color: #666;"><strong>Opponent's color revealed!</strong> You
+                                just gave them a point, and your turn ends <strong>immediately</strong>.</span>
+                        </li>
+                        <li><strong style="color: #d32f2f;">暗殺者（黒）が出た！！</strong>：その瞬間に<strong>チーム全員が即敗北</strong>です。<br>
+                            <span style="font-size: 0.9em; color: #666;"><strong style="color: #d32f2f;">Assassin
+                                    (black) revealed!!</strong> Your team <strong>loses instantly</strong>.</span>
+                        </li>
                     </ul>
-                    <div class="screenshot-img"></div>
-                </div>
-            </div>
-
-            <div class="flow-arrow">⬇️</div>
-
-            <div class="flow-step">
-                <div class="flow-icon">🔁</div>
-                <div class="flow-content">
-                    <p class="step-title">Step 4: ターン交代 (Turn change)</p>
-                    <p class="step-desc">
-                        推測を間違えるか、指定された枚数分を当て終えて推測をパスした場合、相手チームのターンに移ります。これを繰り返し、先に自チームのカードを全て見つけたチームの勝利です！<br>
-                        If you guess wrong or pass, it becomes the opponent's turn. The first team to find all their
-                        cards wins!
-                    </p>
+                    <img src="Operatives Guess.png" alt="推理の結果 / Guess Results" class="img-center"
+                        style="max-width: 700px; margin-top: 15px;">
                 </div>
             </div>
         </div>
 
-        <div class="rule-section">
-            <div class="rule-icon">💀</div>
+        <div class="rule-section" style="background-color: #f0f7ff; border-left-color: #005A8C;">
+            <div class="rule-icon">💡</div>
             <div>
-                <strong style="font-size: 1.2em; color: #d32f2f;">要注意：暗殺者 (Assassin) について</strong><br>
+                <strong style="font-size: 1.2em; color: #005A8C;">プロのコツ / Pro Tip</strong><br>
                 <div class="rule-description">
-                    25枚の中には1枚だけ、絶対に選んではいけない<strong>黒いカード「暗殺者」</strong>が潜んでいます。<br>
-                    オペレーティブがこのカードを選んでしまった瞬間、<strong>そのチームは即座に敗北</strong>となります！<br>
-                    スパイマスターは、暗殺者を連想させるようなヒントは絶対に出さないように注意しましょう。<br>
+                    推理は「数字＋1枚」まで挑戦できます。「フルーツ、2」と言われたら、最大3枚までめくってOK。前のターンで外したカードを、今のヒントと組み合わせて当てるチャンスです！<br>
                     <span style="font-size: 0.9em; color: #666; display: block; margin-top: 5px;">
-                        There is one black card, the <strong>"Assassin"</strong>. If an operative selects this card,
-                        <strong>the team loses instantly!</strong> Spymasters must be very careful not to give hints
-                        that might lead to the Assassin.
+                        You can guess up to "the number + 1" cards. If the Spymaster says "Fruit, 2," you can flip up to
+                        3 cards. This is your chance to catch up by combining previous hints with the current one!
                     </span>
                 </div>
             </div>
         </div>
+
+        <!-- 3. 勝利条件 -->
+        <h3>3. 勝利条件 / Win Conditions</h3>
+        <ul>
+            <li>相手チームよりも先に、<strong>自分のチームの色のエージェント（8枚か9枚）をすべて見つけること</strong>。<br>
+                <span style="font-size: 0.9em; color: #666;">Be the first team to <strong>find all of your team's agents
+                        (8 or 9 cards)</strong>.</span>
+            </li>
+            <li>または、<strong>相手チームが「暗殺者（黒）」を引くこと</strong>。<br>
+                <span style="font-size: 0.9em; color: #666;">Or, the <strong>opponent team selects the "Assassin" (black
+                        card)</strong>.</span>
+            </li>
+        </ul>
+
+        <!-- 4. NGヒント -->
+        <h3>4. 初心者がやりがちな「NGヒント」 / Common "Illegal Hints" for Beginners</h3>
+        <p>スパイマスターは、以下のヒントは出せません。ここは厳格に守りましょう！</p>
+        <p style="font-size: 0.9em; color: #666;">Spymasters cannot give the following types of hints. Please follow
+            these rules strictly!</p>
+
+        <div class="rule-section" style="flex-direction: column; align-items: flex-start;">
+            <div class="rule-description" style="width: 100%;">
+                <ol style="margin: 0; padding-left: 25px;">
+                    <li style="margin-bottom: 15px;">
+                        <strong>場にある文字をそのまま使う</strong>（例：「アップルパイ」というカードがあるのに「パイ」と言うのはNG）<br>
+                        <span style="font-size: 0.9em; color: #666;"><strong>Using words directly from the
+                                board</strong> (e.g., saying "Pie" when "Apple Pie" is on the board is NG)</span>
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        <strong>翻訳・言い換え</strong>（例：「机」に対して「デスク」はNG）<br>
+                        <span style="font-size: 0.9em; color: #666;"><strong>Translations or paraphrasing</strong>
+                            (e.g., saying "Desk" for "Table" is NG)</span>
+                    </li>
+                    <li>
+                        <strong>音や場所のヒント</strong>（例：「3文字のもの」「右にあるやつ」などはNG）<br>
+                        <span style="font-size: 0.9em; color: #666;"><strong>Hints about sounds or position</strong>
+                            (e.g., "The 3-letter one" or "The one on the right" are NG)</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- インストラクターからのアドバイス -->
+        <h3>最後に：インストラクターからのアドバイス / Final Words from the Instructor</h3>
+        <p>このゲームの醍醐味は、スパイマスターの「そんなつもりで言ったんじゃないのに！」という絶望と、諜報員たちの「あ、わかった！天才！」というひらめきが交差する瞬間です。</p>
+        <p style="font-size: 0.9em; color: #666;">The best moments in this game come from the Spymaster's despair —
+            "That's NOT what I meant!" — clashing with the Operatives' eureka moments — "Oh, I get it! Genius!"</p>
+
+        <p>まずは<strong>「1つのヒントで2枚当てること」</strong>を目標にしてみてください。それができれば、勝利はグッと近づきますよ！</p>
+        <p style="font-size: 0.9em; color: #666;">Start with the goal of <strong>"guessing 2 cards with one
+                hint."</strong> If you can do that, victory will be within reach!</p>
+
+        <p style="font-size: 1.1em; font-weight: 800; text-align: center; margin-top: 30px;">さあ、あなたのチームの暗号解読を始めましょう。<br>
+            <span style="font-size: 0.9em; color: #666;">Now, let's begin decoding with your team.</span>
+        </p>
 
         <h2>コミュニケーションのヒント & 注意事項 / Tips & Troubleshooting</h2>
         <ul>
