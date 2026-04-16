@@ -7,32 +7,36 @@
     <title>The 3rd International Online Exchange Program - CodeNames | 第3回海外オンライン交流企画</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+        rel="stylesheet">
     <style>
         /* ========================================
            Design Tokens & Root Variables
            ======================================== */
         :root {
             /* Colors */
-            --primary: #0056b3;       /* Based on the flyer blue */
+            --primary: #0056b3;
+            /* Based on the flyer blue */
             --primary-light: #e6f0ff;
             --primary-dark: #003d80;
-            
+
             --text-main: #1a1a1a;
-            --text-muted: #6b7280;    /* Grey for Japanese text */
+            --text-muted: #6b7280;
+            /* Grey for Japanese text */
             --text-light: #ffffff;
-            
+
             --bg-body: #ffffff;
             --bg-card: #ffffff;
             --bg-subtle: #f9fafb;
-            
+
             --border: #e5e7eb;
             --radius: 12px;
-            
+
             /* Typography */
             --font-en: 'Inter', system-ui, -apple-system, sans-serif;
             --font-ja: 'Noto Sans JP', sans-serif;
-            
+
             /* Layout */
             --max-width: 1000px;
         }
@@ -40,7 +44,9 @@
         /* ========================================
            Global Styles & Reset
            ======================================== */
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -145,7 +151,7 @@
             border: 1px solid var(--border);
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         }
 
         .timetable {
@@ -186,7 +192,8 @@
             font-weight: 800;
             color: var(--primary);
             font-size: 1.15rem;
-            padding-left: 48px; /* Room for the timeline */
+            padding-left: 48px;
+            /* Room for the timeline */
         }
 
         /* Timeline Vertical Stroke */
@@ -202,20 +209,24 @@
         }
 
         .timetable tbody tr:first-child .time-col::before {
-            top: 48px; /* Starts from the first dot */
+            top: 48px;
+            /* Starts from the first dot */
         }
 
         .timetable tbody tr:last-child .time-col::before {
             bottom: auto;
-            height: 48px; /* Ends at the last dot */
+            height: 48px;
+            /* Ends at the last dot */
         }
 
         /* Timeline Dot */
         .timetable .time-col::after {
             content: '';
             position: absolute;
-            left: 13px; /* Centers the dot exactly on the 3px line at left: 20px */
-            top: 39px; /* Aligns with text flow */
+            left: 13px;
+            /* Centers the dot exactly on the 3px line at left: 20px */
+            top: 39px;
+            /* Aligns with text flow */
             width: 9px;
             height: 9px;
             background-color: #fff;
@@ -259,7 +270,7 @@
 
         .role-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
         .role-card h4 {
@@ -270,8 +281,15 @@
             gap: 12px;
         }
 
-        .role-card.spymaster { border-top: 6px solid var(--primary); }
-        .role-card.operative { border-top: 6px solid #ef4444; } /* Red for operative */
+        .role-card.spymaster {
+            border-top: 6px solid var(--primary);
+        }
+
+        .role-card.operative {
+            border-top: 6px solid #ef4444;
+        }
+
+        /* Red for operative */
 
         /* ========================================
            Components: Flow Steps
@@ -301,7 +319,7 @@
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             flex-shrink: 0;
         }
 
@@ -323,7 +341,10 @@
             align-items: flex-start;
         }
 
-        .alert-icon { font-size: 2rem; line-height: 1; }
+        .alert-icon {
+            font-size: 2rem;
+            line-height: 1;
+        }
 
         .alert-info {
             background-color: var(--primary-light);
@@ -356,14 +377,14 @@
             border-radius: var(--radius);
             padding: 28px 16px 20px;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
             position: relative;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .step-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
         .step-card .step-number {
@@ -381,7 +402,7 @@
             justify-content: center;
             font-weight: 800;
             font-size: 0.9rem;
-            box-shadow: 0 4px 10px rgba(0,86,179,0.3);
+            box-shadow: 0 4px 10px rgba(0, 86, 179, 0.3);
         }
 
         .step-card .step-icon {
@@ -389,13 +410,13 @@
             margin-bottom: 12px;
             display: inline-block;
         }
-        
+
         .step-card .lang-en {
             font-size: 1rem;
             margin-bottom: 6px;
             line-height: 1.3;
         }
-        
+
         .step-card .lang-ja {
             font-size: 0.8rem;
         }
@@ -412,7 +433,7 @@
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
             border: 1px solid var(--border);
         }
 
@@ -430,27 +451,63 @@
            Responsive Design
            ======================================== */
         @media (max-width: 900px) {
-            .step-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 24px; margin-top: 50px; }
+            .step-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px 24px;
+                margin-top: 50px;
+            }
         }
 
         @media (max-width: 768px) {
-            .site-header h1 { font-size: 2rem; }
-            .step-grid { grid-template-columns: 1fr; gap: 40px 0; }
-            .section-title { font-size: 1.5rem; }
-            .role-grid { grid-template-columns: 1fr; }
-            .flow-step { flex-direction: column; align-items: flex-start; }
-            .timetable td { padding: 24px 20px; }
-            
-            /* Responsive timeline adjustments */
-            .timetable .time-col { 
-                width: 100px; 
-                font-size: 1.05rem; 
-                padding-left: 36px; 
+            .site-header h1 {
+                font-size: 2rem;
             }
-            .timetable .time-col::before { left: 16px; }
-            .timetable tbody tr:first-child .time-col::before { top: 35px; }
-            .timetable tbody tr:last-child .time-col::before { height: 35px; }
-            .timetable .time-col::after { left: 9px; top: 26px; }
+
+            .step-grid {
+                grid-template-columns: 1fr;
+                gap: 40px 0;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .role-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .flow-step {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .timetable td {
+                padding: 24px 20px;
+            }
+
+            /* Responsive timeline adjustments */
+            .timetable .time-col {
+                width: 100px;
+                font-size: 1.05rem;
+                padding-left: 36px;
+            }
+
+            .timetable .time-col::before {
+                left: 16px;
+            }
+
+            .timetable tbody tr:first-child .time-col::before {
+                top: 35px;
+            }
+
+            .timetable tbody tr:last-child .time-col::before {
+                height: 35px;
+            }
+
+            .timetable .time-col::after {
+                left: 9px;
+                top: 26px;
+            }
         }
     </style>
 </head>
@@ -469,22 +526,28 @@
         <!-- Introduction Section -->
         <section id="introduction">
             <div style="margin-bottom: 24px;">
-                <span class="lang-en">Thank you very much for joining our 3rd International Online Exchange Program!</span>
+                <span class="lang-en">Thank you very much for joining our 3rd International Online Exchange
+                    Program!</span>
                 <span class="lang-ja">この度は、第3回の海外オンライン交流企画にご参加いただき、誠にありがとうございます！</span>
             </div>
 
             <div style="margin-bottom: 24px;">
-                <span class="lang-en">Last time, we enjoyed creative interaction through "Gartic Phone." This time, with the goal of <strong>"increasing the amount of conversation among members,"</strong> we will be playing the globally popular word association board game, <strong>"CodeNames"</strong>!</span>
-                <span class="lang-ja">前回は「Gartic Phone」でお絵描きを通じた交流を行いましたが、今回は<strong>「よりメンバー同士の会話の量を増やすこと」</strong>を目的として、世界中で大人気の言葉の連想ボードゲーム<strong>「CodeNames（コードネーム）」</strong>をプレイします！</span>
+                <span class="lang-en">Last time, we enjoyed creative interaction through "Gartic Phone." This time, with
+                    the goal of <strong>"increasing the amount of conversation among members,"</strong> we will be
+                    playing the globally popular word association board game, <strong>"CodeNames"</strong>!</span>
+                <span class="lang-ja">前回は「Gartic
+                    Phone」でお絵描きを通じた交流を行いましたが、今回は<strong>「よりメンバー同士の会話の量を増やすこと」</strong>を目的として、世界中で大人気の言葉の連想ボードゲーム<strong>「CodeNames（コードネーム）」</strong>をプレイします！</span>
             </div>
 
             <div style="margin-bottom: 24px;">
-                <span class="lang-en">The event time will be 90 minutes. Let's discuss a lot within our teams and deepen our communication.</span>
+                <span class="lang-en">The event time will be 90 minutes. Let's discuss a lot within our teams and deepen
+                    our communication.</span>
                 <span class="lang-ja">実施時間は前回と同じく90分間となります。チーム内でたくさん話し合い、コミュニケーションを深めましょう。</span>
             </div>
 
             <div>
-                <span class="lang-en">Playing a word association game in English might seem a bit challenging, but let's not worry about the language barrier, cooperate as one team, and most importantly, have fun!</span>
+                <span class="lang-en">Playing a word association game in English might seem a bit challenging, but let's
+                    not worry about the language barrier, cooperate as one team, and most importantly, have fun!</span>
                 <span class="lang-ja">英語での連想ゲームは少し難しく感じるかもしれませんが、言葉の壁を気にせず、チーム一丸となって協力しながら楽しみましょう！</span>
             </div>
         </section>
@@ -522,11 +585,13 @@
                                 <span class="lang-en">Breakout Rooms: Icebreaker & Role Assignment</span>
                                 <span class="lang-ja">チーム内に分かれてアイスブレイク & 役割決め</span>
                                 <div style="margin-top: 16px;">
-                                    <span class="lang-en"><strong>Purpose:</strong> Icebreaker & Role assignment<br>Make 4 teams of 3-4 people</span>
+                                    <span class="lang-en"><strong>Purpose:</strong> Icebreaker & Role assignment<br>Make
+                                        4 teams of 3-4 people</span>
                                     <span class="lang-ja"><strong>目的 :</strong> アイスブレイクと役割決め （3〜4名のチームを4つ作成）</span>
                                 </div>
                                 <div class="list-item">
-                                    <span class="lang-en">Self-introduction in English (Role, Hobbies, Recent happy memories)</span>
+                                    <span class="lang-en">Self-introduction in English (Role, Hobbies, Recent happy
+                                        memories)</span>
                                     <span class="lang-ja">英語で自己紹介（仕事、趣味、最近楽しかったこと）</span>
                                 </div>
                                 <div class="list-item">
@@ -576,9 +641,10 @@
         <!-- Rules Section -->
         <section id="how-to-play">
             <h2 class="section-title">How to Play CodeNames</h2>
-            
+
             <div style="margin-bottom: 24px;">
-                <span class="lang-en">"Codenames" is a competitive team game where two teams race to <strong>"find all of their agents (correct words) scattered on the board, using only coded hints."</strong></span>
+                <span class="lang-en">"Codenames" is a competitive team game where two teams race to <strong>"find all
+                        of their agents (correct words) scattered on the board, using only coded hints."</strong></span>
                 <span class="lang-ja">『コードネーム』は、2つのチームに分かれて、暗号を頼りに仲間のエージェント（正解の言葉）をすべて見つけ出すチーム戦ゲームです。</span>
             </div>
 
@@ -586,7 +652,7 @@
                 <span class="lang-en">1. Roles & Setup</span>
                 <span class="lang-ja">1. 役割分担と準備</span>
             </h3>
-            
+
             <div class="role-grid">
                 <div class="role-card spymaster">
                     <h4>🕵️‍♂️ <span class="lang-en">Spymaster (1 person)</span></h4>
@@ -611,8 +677,10 @@
             </div>
 
             <div style="margin: 28px 0;">
-                <span class="lang-en">On the table, there are <strong>25 word cards</strong> arranged in a 5×5 grid. Only the Spymaster can see the <strong>"Key Card"</strong> (answer map).</span>
-                <span class="lang-ja">机には<strong>25枚のワードカード</strong>が5×5で並んでいます。スパイマスターだけが、どのカードが正解かを示す<strong>「正解地図（キーカード）」</strong>を見ることができます。</span>
+                <span class="lang-en">On the table, there are <strong>25 word cards</strong> arranged in a 5×5 grid.
+                    Only the Spymaster can see the <strong>"Key Card"</strong> (answer map).</span>
+                <span
+                    class="lang-ja">机には<strong>25枚のワードカード</strong>が5×5で並んでいます。スパイマスターだけが、どのカードが正解かを示す<strong>「正解地図（キーカード）」</strong>を見ることができます。</span>
             </div>
 
             <div class="img-container">
@@ -634,8 +702,10 @@
                             <span class="lang-en">The hint must be <strong>"One word + One number."</strong></span>
                             <span class="lang-ja">言い方は必ず<strong>「単語1つ ＋ 数字1つ」</strong>です。</span>
                         </p>
-                        <div class="alert alert-info" style="padding: 16px 24px; margin: 0;">
-                            <span class="lang-en">Ex: Answers are "Apple" and "Banana" → <strong>"Fruit, 2"</strong></span>
+                        <div class="alert alert-info"
+                            style="padding: 16px 24px; margin: 0;display: flex; flex-direction: column; gap: 8px;">
+                            <span class="lang-en">Ex: Answers are "Apple" and "Banana" → <strong>"Fruit,
+                                    2"</strong></span>
                             <span class="lang-ja">例：正解が「りんご」「バナナ」の場合 → <strong>「フルーツ、2枚」</strong></span>
                         </div>
                         <div class="img-container" style="margin-top: 24px;">
@@ -643,22 +713,24 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="flow-arrow">▼</div>
-                
+
                 <div class="flow-step">
                     <div class="flow-icon">🗣️</div>
                     <div>
                         <span class="lang-en">Step 2: Operatives Guess</span>
                         <span class="lang-ja">② 現場諜報員が推理する</span>
                         <p style="margin: 12px 0;">
-                            <span class="lang-en">Discuss and touch cards one by one. The turn ends depending on the card color:</span>
+                            <span class="lang-en">Discuss and touch cards one by one. The turn ends depending on the
+                                card color:</span>
                             <span class="lang-ja">チームメンバーは相談して、カードを1枚ずつ触ります。めくった色によってその後の展開が変わります：</span>
                         </p>
 
                         <!-- Result Branch Cards -->
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0;">
-                            <div style="padding: 16px; border-radius: 8px; border-left: 6px solid var(--primary); background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                            <div
+                                style="padding: 16px; border-radius: 8px; border-left: 6px solid var(--primary); background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                                 <span class="lang-en">1. Your Color</span>
                                 <span class="lang-ja">自チームの色</span>
                                 <p style="font-size: 0.85rem; margin-top: 8px;">
@@ -666,7 +738,8 @@
                                     <strong><span class="lang-ja">正解！次の推理へ進めます。</span></strong>
                                 </p>
                             </div>
-                            <div style="padding: 16px; border-radius: 8px; border-left: 6px solid #9ca3af; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                            <div
+                                style="padding: 16px; border-radius: 8px; border-left: 6px solid #9ca3af; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                                 <span class="lang-en">2. White (Bystander)</span>
                                 <span class="lang-ja">一般人（白）</span>
                                 <p style="font-size: 0.85rem; margin-top: 8px;">
@@ -674,7 +747,8 @@
                                     <strong><span class="lang-ja">ハズレ。即交代です。</span></strong>
                                 </p>
                             </div>
-                            <div style="padding: 16px; border-radius: 8px; border-left: 6px solid #ef4444; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                            <div
+                                style="padding: 16px; border-radius: 8px; border-left: 6px solid #ef4444; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                                 <span class="lang-en">3. Opponent Color</span>
                                 <span class="lang-ja">相手チームの色</span>
                                 <p style="font-size: 0.85rem; margin-top: 8px;">
@@ -682,7 +756,8 @@
                                     <strong><span class="lang-ja">相手に点数、即交代です。</span></strong>
                                 </p>
                             </div>
-                            <div style="padding: 16px; border-radius: 8px; border-left: 6px solid #111827; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                            <div
+                                style="padding: 16px; border-radius: 8px; border-left: 6px solid #111827; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                                 <span class="lang-en">4. Black (Assassin)</span>
                                 <span class="lang-ja">暗殺者（黒）</span>
                                 <p style="font-size: 0.85rem; margin-top: 8px; color: #ef4444;">
@@ -702,7 +777,8 @@
             <div class="alert alert-note">
                 <div class="alert-icon">💡</div>
                 <div>
-                    <span class="lang-en"><strong>Pro Tip:</strong> You can guess up to "the number + 1" cards. Use this to catch up!</span>
+                    <span class="lang-en"><strong>Pro Tip:</strong> You can guess up to "the number + 1" cards. Use this
+                        to catch up!</span>
                     <span class="lang-ja"><strong>プロのコツ：</strong> 推理は「数字＋1枚」まで挑戦できます。前のターンの分も当てるチャンスです！</span>
                 </div>
             </div>
@@ -713,7 +789,8 @@
             </h3>
             <ul style="margin: 24px 0; padding-left: 20px;">
                 <li class="list-item">
-                    <span class="lang-en">Find <strong>all of your agents</strong> (8 or 9 cards) before the other team.</span>
+                    <span class="lang-en">Find <strong>all of your agents</strong> (8 or 9 cards) before the other
+                        team.</span>
                     <span class="lang-ja">相手より先に、<strong>自分のエージェントをすべて見つけること</strong>。</span>
                 </li>
                 <li class="list-item">
@@ -730,15 +807,18 @@
                 <div class="alert-icon">⚠️</div>
                 <div style="width: 100%;">
                     <div class="list-item">
-                        <span class="lang-en"><strong>Don't use the word on the board</strong> (Ex: "Pie" for "Apple Pie" is NG)</span>
+                        <span class="lang-en"><strong>Don't use the word on the board</strong> (Ex: "Pie" for "Apple
+                            Pie" is NG)</span>
                         <span class="lang-ja"><strong>場にある文字をそのまま使う</strong>（例: 「アップルパイ」に対し「パイ」はNG）</span>
                     </div>
                     <div class="list-item">
-                        <span class="lang-en"><strong>Translation or Paraphrasing</strong> (Ex: "Desk" for "Table" is NG)</span>
+                        <span class="lang-en"><strong>Translation or Paraphrasing</strong> (Ex: "Desk" for "Table" is
+                            NG)</span>
                         <span class="lang-ja"><strong>翻訳・言い換え</strong>（例: 「机」に対し「デスク」はNG）</span>
                     </div>
                     <div class="list-item">
-                        <span class="lang-en"><strong>Position or Sound hints</strong> (Ex: "Right one" or "3 letters" is NG)</span>
+                        <span class="lang-en"><strong>Position or Sound hints</strong> (Ex: "Right one" or "3 letters"
+                            is NG)</span>
                         <span class="lang-ja"><strong>音や場所のヒント</strong>（例: 「右にあるやつ」「3文字」はNG）</span>
                     </div>
                 </div>
@@ -749,14 +829,16 @@
         <section id="advice">
             <h2 class="section-title">Tips & Communication</h2>
             <div style="margin-bottom: 24px;">
-                <span class="lang-en">Aim to link at least 2 cards with one clever hint. This is the key to victory!</span>
+                <span class="lang-en">Aim to link at least 2 cards with one clever hint. This is the key to
+                    victory!</span>
                 <span class="lang-ja">まずは<strong>「1つのヒントで2枚当てること」</strong>を目標にしてみてください。それが勝利への近道です！</span>
             </div>
 
             <div class="alert alert-info">
                 <div class="alert-icon">🗣️</div>
                 <div>
-                    <span class="lang-en">Operatives, please <strong>voice out your thoughts!</strong> The best part of this game is the discussion process. Even if you are wrong, it's fun!</span>
+                    <span class="lang-en">Operatives, please <strong>voice out your thoughts!</strong> The best part of
+                        this game is the discussion process. Even if you are wrong, it's fun!</span>
                     <span class="lang-ja">諜報員はどんどん声に出して相談しましょう！間違っていても大丈夫。話し合いの過程こそが一番の醍醐味です。</span>
                 </div>
             </div>
@@ -764,7 +846,8 @@
             <div class="alert alert-warning">
                 <div class="alert-icon">⚠️</div>
                 <div>
-                    <span class="lang-en"><strong>Disconnection:</strong> If you drop out, inform your team via the meeting chat immediately. We will pause and wait for you.</span>
+                    <span class="lang-en"><strong>Disconnection:</strong> If you drop out, inform your team via the
+                        meeting chat immediately. We will pause and wait for you.</span>
                     <span class="lang-ja">通信トラブル等で退出した際は、会議ツールのチャット等で報告してください。ゲームを一時停止し、復帰を待ちます。</span>
                 </div>
             </div>
@@ -787,7 +870,7 @@
                     <span class="lang-en">Click the URL</span>
                     <span class="lang-ja">URLをクリック<br>（招待リンクを開く）</span>
                 </div>
-                
+
                 <!-- Step 2 -->
                 <div class="step-card">
                     <div class="step-number">2</div>
@@ -816,15 +899,20 @@
             <div class="alert alert-info">
                 <div class="alert-icon">💡</div>
                 <div>
-                    <span class="lang-en"><strong>Point:</strong> Teams and roles will be decided later, so just joining the room is fine for now!</span>
+                    <span class="lang-en"><strong>Point:</strong> Teams and roles will be decided later, so just joining
+                        the room is fine for now!</span>
                     <span class="lang-ja"><strong>ポイント：</strong>チーム分けや役割は後で決めるため、まずは入室するだけでOKです！</span>
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 48px; padding: 32px 24px; background-color: var(--primary-light); border-radius: var(--radius); border: 2px dashed rgba(0, 86, 179, 0.3);">
+            <div
+                style="text-align: center; margin-top: 48px; padding: 32px 24px; background-color: var(--primary-light); border-radius: var(--radius); border: 2px dashed rgba(0, 86, 179, 0.3);">
                 <div style="font-size: 2.5rem; margin-bottom: 16px;">🚀</div>
-                <span class="lang-en" style="display: block; font-size: 1.5rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 8px;">Let's rescue the agents together!</span>
-                <span class="lang-ja" style="display: block; font-size: 1.1rem; color: var(--primary-dark); font-weight: 700; font-style: normal;">みんなでエージェントを救出しよう！</span>
+                <span class="lang-en"
+                    style="display: block; font-size: 1.5rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 8px;">Let's
+                    rescue the agents together!</span>
+                <span class="lang-ja"
+                    style="display: block; font-size: 1.1rem; color: var(--primary-dark); font-weight: 700; font-style: normal;">みんなでエージェントを救出しよう！</span>
             </div>
         </section>
 
@@ -838,4 +926,5 @@
     </footer>
 
 </body>
+
 </html>
