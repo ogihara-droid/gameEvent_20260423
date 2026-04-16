@@ -50,7 +50,7 @@
             font-family: var(--font-en), var(--font-ja);
             background-color: var(--bg-body);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.45;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -68,16 +68,16 @@
             font-weight: 700;
             font-size: 1.15rem;
             color: var(--text-main);
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
         .lang-ja {
             display: block;
             font-weight: 400;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
             font-style: italic;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .lang-ja:last-child {
@@ -88,7 +88,7 @@
            Components: Header
            ======================================== */
         .site-header {
-            padding: 80px 0 60px;
+            padding: 56px 0 40px;
             border-bottom: 3px solid var(--primary);
             text-align: center;
         }
@@ -98,7 +98,7 @@
             font-weight: 800;
             color: var(--primary);
             letter-spacing: -0.02em;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .site-header .subtitle {
@@ -111,7 +111,7 @@
            Components: Sections & Cards
            ======================================== */
         section {
-            padding: 80px 0;
+            padding: 56px 0;
             border-bottom: 1px solid var(--border);
         }
 
@@ -123,7 +123,7 @@
             font-size: 2rem;
             font-weight: 800;
             color: var(--primary);
-            margin-bottom: 40px;
+            margin-bottom: 28px;
             display: flex;
             align-items: center;
             gap: 16px;
@@ -138,10 +138,10 @@
         }
 
         /* ========================================
-           Components: Timetable (Flyer-like)
+           Components: Timetable & Timeline
            ======================================== */
         .timetable-wrapper {
-            margin: 40px 0;
+            margin: 28px 0;
             border: 1px solid var(--border);
             border-radius: var(--radius);
             overflow: hidden;
@@ -157,7 +157,7 @@
         .timetable th {
             background-color: var(--primary);
             color: #fff;
-            padding: 20px 30px;
+            padding: 14px 24px;
             text-align: left;
             font-weight: 700;
             text-transform: uppercase;
@@ -166,35 +166,67 @@
         }
 
         .timetable td {
-            padding: 32px 30px;
-            border-bottom: 1px solid var(--border);
+            padding: 32px 24px;
             vertical-align: top;
+            border-bottom: 1px solid var(--border);
         }
 
         .timetable tr:last-child td {
             border-bottom: none;
         }
 
-        .timetable .time-col {
-            width: 140px;
-            font-weight: 800;
-            color: var(--primary);
-            font-size: 1.2rem;
+        /* Zebra Pattern for Phases */
+        .timetable tbody tr:nth-child(even) {
+            background-color: var(--bg-subtle);
         }
 
-        .timetable .separator {
-            background-color: var(--bg-subtle);
-            text-align: center;
-            padding: 14px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+        .timetable .time-col {
+            position: relative;
+            width: 160px;
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 1.15rem;
+            padding-left: 48px; /* Room for the timeline */
+        }
+
+        /* Timeline Vertical Stroke */
+        .timetable .time-col::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background-color: var(--primary-light);
+            z-index: 1;
+        }
+
+        .timetable tbody tr:first-child .time-col::before {
+            top: 48px; /* Starts from the first dot */
+        }
+
+        .timetable tbody tr:last-child .time-col::before {
+            bottom: auto;
+            height: 48px; /* Ends at the last dot */
+        }
+
+        /* Timeline Dot */
+        .timetable .time-col::after {
+            content: '';
+            position: absolute;
+            left: 13px; /* Centers the dot exactly on the 3px line at left: 20px */
+            top: 39px; /* Aligns with text flow */
+            width: 9px;
+            height: 9px;
+            background-color: #fff;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 0 0 4px var(--primary-light);
         }
 
         .timetable .list-item {
-            margin-top: 12px;
+            margin-top: 8px;
             padding-left: 20px;
             position: relative;
         }
@@ -213,12 +245,12 @@
         .role-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            margin: 40px 0;
+            gap: 24px;
+            margin: 32px 0;
         }
 
         .role-card {
-            padding: 40px;
+            padding: 32px;
             border-radius: var(--radius);
             border: 1px solid var(--border);
             background-color: var(--bg-card);
@@ -231,8 +263,8 @@
         }
 
         .role-card h4 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -245,26 +277,26 @@
            Components: Flow Steps
            ======================================== */
         .flow-container {
-            margin: 40px 0;
+            margin: 32px 0;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 16px;
         }
 
         .flow-step {
             display: flex;
-            gap: 32px;
-            padding: 40px;
+            gap: 24px;
+            padding: 32px;
             border-radius: var(--radius);
             background-color: var(--bg-subtle);
             border: 1px solid var(--border);
         }
 
         .flow-icon {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             background: #fff;
-            width: 80px;
-            height: 80px;
+            width: 68px;
+            height: 68px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -283,11 +315,11 @@
            Components: Alerts & Callouts
            ======================================== */
         .alert {
-            padding: 32px;
+            padding: 24px;
             border-radius: var(--radius);
-            margin: 32px 0;
+            margin: 24px 0;
             display: flex;
-            gap: 24px;
+            gap: 20px;
             align-items: flex-start;
         }
 
@@ -309,10 +341,70 @@
         }
 
         /* ========================================
+           Components: Join Guide Grid
+           ======================================== */
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 48px 0 32px;
+        }
+
+        .step-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 16px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .step-card .step-number {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary);
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0,86,179,0.3);
+        }
+
+        .step-card .step-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+        
+        .step-card .lang-en {
+            font-size: 1rem;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+        
+        .step-card .lang-ja {
+            font-size: 0.8rem;
+        }
+
+        /* ========================================
            Image Handling
            ======================================== */
         .img-container {
-            margin: 40px 0;
+            margin: 32px 0;
             text-align: center;
         }
 
@@ -320,7 +412,7 @@
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
             border: 1px solid var(--border);
         }
 
@@ -328,7 +420,7 @@
            Footer
            ======================================== */
         .site-footer {
-            padding: 100px 0;
+            padding: 60px 0;
             text-align: center;
             background-color: var(--bg-subtle);
             border-top: 1px solid var(--border);
@@ -337,13 +429,28 @@
         /* ========================================
            Responsive Design
            ======================================== */
+        @media (max-width: 900px) {
+            .step-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 24px; margin-top: 50px; }
+        }
+
         @media (max-width: 768px) {
             .site-header h1 { font-size: 2rem; }
+            .step-grid { grid-template-columns: 1fr; gap: 40px 0; }
             .section-title { font-size: 1.5rem; }
             .role-grid { grid-template-columns: 1fr; }
             .flow-step { flex-direction: column; align-items: flex-start; }
             .timetable td { padding: 24px 20px; }
-            .time-col { width: 100px; font-size: 1.1rem; }
+            
+            /* Responsive timeline adjustments */
+            .timetable .time-col { 
+                width: 100px; 
+                font-size: 1.05rem; 
+                padding-left: 36px; 
+            }
+            .timetable .time-col::before { left: 16px; }
+            .timetable tbody tr:first-child .time-col::before { top: 35px; }
+            .timetable tbody tr:last-child .time-col::before { height: 35px; }
+            .timetable .time-col::after { left: 9px; top: 26px; }
         }
     </style>
 </head>
@@ -361,17 +468,17 @@
 
         <!-- Introduction Section -->
         <section id="introduction">
-            <div style="margin-bottom: 40px;">
+            <div style="margin-bottom: 24px;">
                 <span class="lang-en">Thank you very much for joining our 3rd International Online Exchange Program!</span>
                 <span class="lang-ja">この度は、第3回の海外オンライン交流企画にご参加いただき、誠にありがとうございます！</span>
             </div>
 
-            <div style="margin-bottom: 40px;">
+            <div style="margin-bottom: 24px;">
                 <span class="lang-en">Last time, we enjoyed creative interaction through "Gartic Phone." This time, with the goal of <strong>"increasing the amount of conversation among members,"</strong> we will be playing the globally popular word association board game, <strong>"CodeNames"</strong>!</span>
                 <span class="lang-ja">前回は「Gartic Phone」でお絵描きを通じた交流を行いましたが、今回は<strong>「よりメンバー同士の会話の量を増やすこと」</strong>を目的として、世界中で大人気の言葉の連想ボードゲーム<strong>「CodeNames（コードネーム）」</strong>をプレイします！</span>
             </div>
 
-            <div style="margin-bottom: 40px;">
+            <div style="margin-bottom: 24px;">
                 <span class="lang-en">The event time will be 90 minutes. Let's discuss a lot within our teams and deepen our communication.</span>
                 <span class="lang-ja">実施時間は前回と同じく90分間となります。チーム内でたくさん話し合い、コミュニケーションを深めましょう。</span>
             </div>
@@ -410,19 +517,13 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2" class="separator">
-                                <span class="lang-en">--- Make 4 teams of 3-4 people ---</span>
-                                <span class="lang-ja">--- チーム分け（3〜4名のチームを4つ作成） ---</span>
-                            </td>
-                        </tr>
-                        <tr>
                             <td class="time-col">15 min</td>
                             <td>
                                 <span class="lang-en">Breakout Rooms: Icebreaker & Role Assignment</span>
                                 <span class="lang-ja">チーム内に分かれてアイスブレイク & 役割決め</span>
                                 <div style="margin-top: 16px;">
-                                    <span class="lang-en"><strong>Purpose:</strong> Icebreaker & Role assignment</span>
-                                    <span class="lang-ja"><strong>目的 :</strong> アイスブレイクと役割決め</span>
+                                    <span class="lang-en"><strong>Purpose:</strong> Icebreaker & Role assignment<br>Make 4 teams of 3-4 people</span>
+                                    <span class="lang-ja"><strong>目的 :</strong> アイスブレイクと役割決め （3〜4名のチームを4つ作成）</span>
                                 </div>
                                 <div class="list-item">
                                     <span class="lang-en">Self-introduction in English (Role, Hobbies, Recent happy memories)</span>
@@ -432,12 +533,6 @@
                                     <span class="lang-en">Decide Spymasters</span>
                                     <span class="lang-ja">スパイマスターの決定</span>
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" class="separator">
-                                <span class="lang-en">--- Regroup ---</span>
-                                <span class="lang-ja">--- 再集合 ---</span>
                             </td>
                         </tr>
                         <tr>
@@ -452,12 +547,6 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2" class="separator">
-                                <span class="lang-en">--- Regroup ---</span>
-                                <span class="lang-ja">--- 再集合 ---</span>
-                            </td>
-                        </tr>
-                        <tr>
                             <td class="time-col">25 min</td>
                             <td>
                                 <span class="lang-en">Start Game 2</span>
@@ -466,12 +555,6 @@
                                     <span class="lang-en">Rotate the Spymaster for the next game.</span>
                                     <span class="lang-ja">スパイマスターを交代して進行します。</span>
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" class="separator">
-                                <span class="lang-en">--- Regroup & Closing ---</span>
-                                <span class="lang-ja">--- 再集合 & クロージング ---</span>
                             </td>
                         </tr>
                         <tr>
@@ -494,12 +577,12 @@
         <section id="how-to-play">
             <h2 class="section-title">How to Play CodeNames</h2>
             
-            <div style="margin-bottom: 32px;">
+            <div style="margin-bottom: 24px;">
                 <span class="lang-en">"Codenames" is a competitive team game where two teams race to <strong>"find all of their agents (correct words) scattered on the board, using only coded hints."</strong></span>
                 <span class="lang-ja">『コードネーム』は、2つのチームに分かれて、暗号を頼りに仲間のエージェント（正解の言葉）をすべて見つけ出すチーム戦ゲームです。</span>
             </div>
 
-            <h3 style="margin-top: 48px; border-bottom: 2px solid var(--border); padding-bottom: 12px;">
+            <h3 style="margin-top: 36px; border-bottom: 2px solid var(--border); padding-bottom: 12px;">
                 <span class="lang-en">1. Roles & Setup</span>
                 <span class="lang-ja">1. 役割分担と準備</span>
             </h3>
@@ -527,7 +610,7 @@
                 <img src="Roles & Setup.png" alt="Roles and Setup">
             </div>
 
-            <div style="margin: 40px 0;">
+            <div style="margin: 28px 0;">
                 <span class="lang-en">On the table, there are <strong>25 word cards</strong> arranged in a 5×5 grid. Only the Spymaster can see the <strong>"Key Card"</strong> (answer map).</span>
                 <span class="lang-ja">机には<strong>25枚のワードカード</strong>が5×5で並んでいます。スパイマスターだけが、どのカードが正解かを示す<strong>「正解地図（キーカード）」</strong>を見ることができます。</span>
             </div>
@@ -536,7 +619,7 @@
                 <img src="25 word cards.png" alt="25 Word Cards Grid">
             </div>
 
-            <h3 style="margin-top: 60px; border-bottom: 2px solid var(--border); padding-bottom: 12px;">
+            <h3 style="margin-top: 40px; border-bottom: 2px solid var(--border); padding-bottom: 12px;">
                 <span class="lang-en">2. Game Flow</span>
                 <span class="lang-ja">2. ゲームの流れ</span>
             </h3>
@@ -624,7 +707,7 @@
                 </div>
             </div>
 
-            <h3 style="margin-top: 60px; border-bottom: 2px solid var(--border); padding-bottom: 12px;">
+            <h3 style="margin-top: 40px; border-bottom: 2px solid var(--border); padding-bottom: 12px;">
                 <span class="lang-en">3. Win Condition</span>
                 <span class="lang-ja">3. 勝利条件</span>
             </h3>
@@ -639,7 +722,7 @@
                 </li>
             </ul>
 
-            <h3 style="margin-top: 60px; border-bottom: 2px solid var(--border); padding-bottom: 12px;">
+            <h3 style="margin-top: 40px; border-bottom: 2px solid var(--border); padding-bottom: 12px;">
                 <span class="lang-en">4. Illegal Hints (Strict Rule!)</span>
                 <span class="lang-ja">4. NGヒント（厳守！）</span>
             </h3>
@@ -665,7 +748,7 @@
         <!-- Advice & Tips -->
         <section id="advice">
             <h2 class="section-title">Tips & Communication</h2>
-            <div style="margin-bottom: 40px;">
+            <div style="margin-bottom: 24px;">
                 <span class="lang-en">Aim to link at least 2 cards with one clever hint. This is the key to victory!</span>
                 <span class="lang-ja">まずは<strong>「1つのヒントで2枚当てること」</strong>を目標にしてみてください。それが勝利への近道です！</span>
             </div>
@@ -684,6 +767,64 @@
                     <span class="lang-en"><strong>Disconnection:</strong> If you drop out, inform your team via the meeting chat immediately. We will pause and wait for you.</span>
                     <span class="lang-ja">通信トラブル等で退出した際は、会議ツールのチャット等で報告してください。ゲームを一時停止し、復帰を待ちます。</span>
                 </div>
+            </div>
+        </section>
+
+        <!-- Join Guide Section -->
+        <section id="join-guide">
+            <div style="display: flex; flex-direction: column; margin-bottom: 24px;">
+                <h2 class="section-title" style="margin-bottom: 8px;">🕵️ Participant Join Guide</h2>
+                <div style="padding-left: 24px; font-weight: 700; color: var(--text-muted); font-size: 1.1rem;">
+                    【参加者用】コードネーム合流ガイド
+                </div>
+            </div>
+
+            <div class="step-grid">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">🔗</div>
+                    <span class="lang-en">Click the URL</span>
+                    <span class="lang-ja">URLをクリック<br>（招待リンクを開く）</span>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">📝</div>
+                    <span class="lang-en">Enter your Nickname</span>
+                    <span class="lang-ja">ニックネームを入力<br>（ゲーム中の名前）</span>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">🖱️</div>
+                    <span class="lang-en">Click <span style="color: var(--primary);">"JOIN"</span></span>
+                    <span class="lang-ja">「JOIN（参加する）」<br>ボタンを押す（青色）</span>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">🌐</div>
+                    <span class="lang-en">Check Language</span>
+                    <span class="lang-ja">言語をチェック<br>（「日本語」設定の確認）</span>
+                </div>
+            </div>
+
+            <div class="alert alert-info">
+                <div class="alert-icon">💡</div>
+                <div>
+                    <span class="lang-en"><strong>Point:</strong> Teams and roles will be decided later, so just joining the room is fine for now!</span>
+                    <span class="lang-ja"><strong>ポイント：</strong>チーム分けや役割は後で決めるため、まずは入室するだけでOKです！</span>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 48px; padding: 32px 24px; background-color: var(--primary-light); border-radius: var(--radius); border: 2px dashed rgba(0, 86, 179, 0.3);">
+                <div style="font-size: 2.5rem; margin-bottom: 16px;">🚀</div>
+                <span class="lang-en" style="display: block; font-size: 1.5rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 8px;">Let's rescue the agents together!</span>
+                <span class="lang-ja" style="display: block; font-size: 1.1rem; color: var(--primary-dark); font-weight: 700; font-style: normal;">みんなでエージェントを救出しよう！</span>
             </div>
         </section>
 
